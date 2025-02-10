@@ -1,0 +1,45 @@
+﻿@model List<TP2_QCH.Models.Reviews>
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>HN - Review List</title>
+        <link rel="stylesheet" href="~/resources/Form.css" />
+    </head>
+    <body>
+        <header>
+            <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+            <h1>Liste des avis</h1>
+        </header>
+    
+    <nav>
+        <ul>
+            <li><a href="/Home/Index">Accueil</a></li>
+            <li><a href="/Home/Form">Remplir le formulaire</a></li>
+        </ul>
+    </nav>
+    <section>
+        <table>
+            <tr>
+                <th colspan="3">Avis</th>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Avis donné ?</th>
+            </tr>
+            @foreach (var review in Model)
+            {
+                <tr>
+                    <td>@review.Name</td>
+                    <td>@review.FirstName</td>
+                    <td style="background-color: @(review.AvisDonne == "O" ? "palegreen" : "tomato");">
+                        @(review.AvisDonne == "O" ? "Oui" : "Non")
+                    </td>
+                </tr>
+            }
+        </table>
+    </section>
+    </body>
+</html>

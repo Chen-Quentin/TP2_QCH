@@ -1,0 +1,90 @@
+﻿@model TP2_QCH.Models.FormModel
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>HN - Validation Page</title>
+    <link rel="stylesheet" href="~/resources/Form.css" />
+</head>
+
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>Page de validation</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/Home/Index">Accueil</a></li>
+            <li><a href="/Home/ListPage">Liste des avis</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Votre formulaire a bien été pris en compte.</h2>
+            <table>
+                <tr>
+                    <th colspan="2">Informations Personnelles</th>
+                </tr>
+                <tr>
+                    <td>Nom</td>
+                    <td>@Model.Name</td>
+                </tr>
+                <tr>
+                    <td>Prénom</td>
+                    <td>@Model.FName</td>
+                </tr>
+                <tr>
+                    <td>Sexe</td>
+                    <td>@Model.Gender</td>
+                </tr>
+                <tr>
+                    <td>Adresse</td>
+                    <td>@Model.Address</td>
+                </tr>
+                <tr>
+                    <td>Code Postal</td>
+                    <td>@Model.ZCode</td>
+                </tr>
+                <tr>
+                    <td>Ville</td>
+                    <td>@Model.Town</td>
+                </tr>
+                <tr>
+                    <td>Adresse Email</td>
+                    <td>@Model.Email</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th colspan="2">Informations sur la Formation</th>
+                </tr>
+                <tr>
+                    <td>Début de Formation</td>
+                    <td>
+                        <input type="date" name="SDate" value="@Model.SDate" readonly/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Formation Suivie</td>
+                    <td>@Model.TType</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th colspan="2">Avis sur la Formation Suivie</th>
+                </tr>
+                <tr>
+                    <td>Formation Cobol</td>
+                    <td><input type="text" name="cobolf" /></td>
+                </tr>
+                <tr>
+                    <td>Formation C#</td>
+                    <td><input type="text" name="csharf" /></td>
+                </tr>
+            </table>
+    </section>
+</body>
+
+</html>
